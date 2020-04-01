@@ -3,4 +3,4 @@
 ## 1. MEDIT
    Reach to the third sound and it is breathtaking.
    
-   ##wait for more to be added.
+   ## Wait for more to be added.
