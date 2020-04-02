@@ -12,7 +12,7 @@ body,html {
 
 .keys {
   display: flex;
-  flex: 1;
+
   min-height: 100vh;
   align-items: center;
   justify-content: center;
@@ -34,7 +34,6 @@ body,html {
 
 .playing {
   transform: scale(1.1);
-  transition-delay: 100ms;
   border-color: lightpink;
   box-shadow: 0 0 1rem #D980FA,
                 0,0,1.5rem, #5758BB,
