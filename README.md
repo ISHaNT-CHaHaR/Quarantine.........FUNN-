@@ -3,4 +3,10 @@
 ## 1. MEDIT
    Reach to the third sound and it is breathtaking.
    
-   ## Wait for more to be added.
+## 2. Sounds
+   Here is sime fun with drum sounds.
+
+## 3. DATA works.
+   This is majorly focused on fetch and practicing other asynchronous functions JS.
+   
+   ## HAVe fun for more.
