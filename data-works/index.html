@@ -7,11 +7,19 @@
       <title>Working with data</title>
    </head>
    <body>
-      <img src="" alt="image" id="rainbow" />
+      <p id="para"></p>
       <script>
-         console.log('about to fetch!);
+         catchRainbow().catch((err) => {
+            console.log(err);
+         });
 
-         fetch(rainbow.jpg);
+         async function catchRainbow() {
+            const response = await fetch('abc.txt');
+
+            let abc = await response.text();
+            document.getElementById('para').innerHTML = abc;
+         }
       </script>
    </body>
 </html>
+
