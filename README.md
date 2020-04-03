@@ -8,5 +8,8 @@
 
 ## 3. DATA works.
    This is majorly focused on fetch and practicing other asynchronous functions JS.
+  
+## 4. Clock
+    An analog clock using JS but its hardcoded.
+    
    
-   ## HAVe fun for more.
