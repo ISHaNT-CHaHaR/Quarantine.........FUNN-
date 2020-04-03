@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // DATA from :  NASA
+         // MEan from: NASA
+         getData();
+         async function getData() {
+            const data = await fetch('FL_insurance_sample.csv');
+            const table = await data.text();
+            const res = table.split('\n');
+
+            res.forEach((el) => {
+               const row = el.split(',');
+               const policeid = row[0];
+               const statusCode = row[1];
+               console.log(policeid, statusCode);
+            });
+         }
+      </script>
+   </body>
+</html>
