@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Fetch Json APi</title>
+   </head>
+   <body>
+      <h1>
+         Where is Space station?
+      </h1>
+      <p>
+         latitude: <span id="lat"></span><br />
+         longitude: <span id="long"></span>
+      </p>
+
+      <script>
+                  const url = 'https://api.wheretheiss.at/v1/satellites/25544';
+                  let timing = setInterval( getISS,2000);
+                  async function getISS() {
+                     const response = await fetch(url);
+                     const data = await response.json();
+
+                     const { latitude, longitude } = data; // destructing
+
+                     document.getElementById('lat').textContent = latitude;
+                     document.getElementById('long').textContent = longitude;
+                     console.log(latitude, longitude);
+
+                     // console.log(data.latitude, data.longitude);
+                  }
+         
+                
+      </script>
+   </body>
+</html>
