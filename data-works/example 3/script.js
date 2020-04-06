@@ -1,4 +1,4 @@
-const mymap = L.map('issMap').setView([0, 0], 1);
+const mymap = L.map('issMap').setView([0, 0], 2);
 
 const url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
@@ -16,7 +16,8 @@ const issIcon = L.icon({
    iconSize: [50, 32],
    iconAnchor: [25, 16],
 });
-
+const marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+let f = true;
 async function getISS() {
    const response = await fetch(url);
 
@@ -24,12 +25,21 @@ async function getISS() {
 
    const { latitude, longitude } = data; // destructing
 
-   document.getElementById('lat').textContent = latitude;
-   document.getElementById('long').textContent = longitude;
+   document.getElementById('lat').textContent = latitude.toFixed(3);
+
+   document.getElementById('long').textContent = longitude.toFixed(3);
 
    // marker.setLanLng([latitude, longitude]); /// function to set at live location.
-   L.marker([latitude, longitude], { icon: issIcon }).addTo(mymap); //for  marker.
+   //for  marker.
+   marker.setLatLng([latitude, longitude]);
+
+   if (f == true) {
+      f = false;
+      mymap.setView([latitude, longitude], 3);
+   }
+
    console.log(data.latitude, data.longitude);
 }
-
 getISS();
+
+setInterval(getISS, 1000);
